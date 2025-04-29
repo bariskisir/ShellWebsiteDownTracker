@@ -42,6 +42,7 @@ check_website() {
         echo "$current_time - $url is up (HTTP status: $http_response)"
         # Reset down count for this URL
         down_count["$url"]=0
+        unset down_start_time["$url"]
     else
         # HTTP failure (4xx, 5xx, or 000)
         echo "$current_time - $url is down (HTTP status: $http_response)"
